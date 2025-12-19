@@ -15,6 +15,18 @@ form.addEventListener('submit', function(e){
   }
   else{
     const val=(weight / ((height*height) / 1000)).toFixed(2);
-    results.innerHTML=`<span>${val}</span>`
+    if(val<18.6){
+      results.innerHTML=`<span>${val} : under weight</span>`
+      //results.innerHTML='under weight'
+    }
+    if(val>=18.6 && val<24.9){
+      results.innerHTML=`<span>${val} : normal weight</span>`
+    }
+    if(val>24.9){
+      results.innerHTML=`<span>${val} : overweight</span>`
+    }
   }
+  
+  
+
 })
